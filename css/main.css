@@ -1,19 +1,28 @@
-/* styles.css */
+/* main.css */
 
 /* Reset some default browser styles */
 body {
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
+/* Center the container both horizontally and vertically */
+.whole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* 90% of the viewport height */
+}
+
 /* Basic styles for the container */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    text-align: center;
+    background-color: #dcd0ff;
     padding: 16px;
+    width: 40%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo styles */
@@ -30,7 +39,7 @@ body {
 
 /* Input field styles */
 .input-field {
-    width: 300px;
+    width: 100%;
     height: 48px;
     margin-top: 16px;
     background-color: #ffffff;
@@ -40,34 +49,22 @@ body {
 }
 
 /* Button styles */
-.button {
-    width: 200px;
+.button,
+.signup-button {
+    width: 100%;
     height: 48px;
     margin-top: 16px;
-    background-color: #007bff;
+    background-color: #9b59b6;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
-
-.signup-button {
-    width: 250px;
-    height: 48px;
-    margin-top: 24px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
+.button:hover,
 .signup-button:hover {
-    background-color: #0056b3;
+    background-color: #8e44ad;
 }
 
 /* Loading Spinner styles */
