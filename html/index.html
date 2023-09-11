@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
@@ -13,15 +13,14 @@
                 <!-- TrackIt Logo -->
                 <img class="logo" src="/assets/TrackIt Logo.png" alt="TrackIt Logo">
     
-            <!-- Username Input -->
-            <input id="username" class="input-field" type="text" placeholder="Username">
+                <!-- Username Input -->
+                <input id="username" class="input-field" type="text" placeholder="Username">
     
-            <!-- Password Input -->
-            <input id="password" class="input-field" type="password" placeholder="Password">
+                <!-- Password Input -->
+                <input id="password" class="input-field" type="password" placeholder="Password">
     
                 <!-- Sign In Button -->
-                <button id="login" class="button">Sign In</button>
-                <script src="/js/main.js"></script>
+                <button onclick="myFunc()" type="submit" id="login" class="button">Sign In</button>
     
                 <!-- Sign Up Link -->
                 <div>
@@ -33,5 +32,15 @@
             </form>
         </div>
     </div>
+
+    <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
+
+      <script src="/js/main.js" charset="UTF-8"></script>
 </body>
 </html>
