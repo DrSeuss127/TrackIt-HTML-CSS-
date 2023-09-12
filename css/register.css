@@ -1,32 +1,4 @@
 /* register.css */
-
-/* Reset some default browser styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(45deg, #dcd0ff, #9b59b6);
-  }
-
-.whole {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh; /* 90% of the viewport height */
-  }
-
-  .glass{
-    background: linear-gradient(225deg, rgba(155, 89, 182, 0.4), rgba(220, 208, 255, 0.4));
-    backdrop-filter: blur(8px);
-}
-
-/* Basic styles for the container */
 .registerBox {
     text-align: center;
     background-color: #dcd0ff;
