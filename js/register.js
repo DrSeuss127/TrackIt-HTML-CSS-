@@ -58,8 +58,8 @@ myInput.onkeyup = function() {
 }
 
 function validation(){
-  var username = document.loginForm.username.value;
-  var password = document.loginForm.password.value;
+  var username = document.registerForm.username.value;
+  var password = document.registerForm.password.value;
 
   if(username.length=="" && password.length=="") {  
       alert("Username and Password fields are empty.");  
@@ -74,6 +74,11 @@ function validation(){
       if(password.length=""){
           alert("Password cannot be blank.");
           return false;
+      }
+
+      if(username.length!="" && password.length!=""){
+        alert('Registration successful!');
+        return true
       }
   }
 }

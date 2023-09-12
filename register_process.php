@@ -24,6 +24,8 @@ $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')
 
 if ($conn->query($sql) === TRUE) {
     echo "Registration successful!";
+    sleep(3);
+    header('Location:https://127.0.0.1/TrackIt-HTML-CSS-/html/index.html');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
