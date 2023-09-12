@@ -1,12 +1,31 @@
+<?php
+session_start(); // Start or resume the session
+
+// Check if the user is authenticated
+if (!isset($_SESSION['user_authenticated']) || $_SESSION['user_authenticated'] !== true) {
+    header("Location: https://127.0.0.1/Trackit-HTML-CSS-/html/index.html"); // Redirect to the login page if not authenticated
+    exit;
+}
+
+// Display a welcome message with the username
+echo "Welcome, " . $_SESSION['username'] . "!";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TrackIt Menu</title>
-    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="https://127.0.0.1/Trackit-HTML-CSS-/css/menu.css" />
   </head>
   <body>
+
+    <form action="https://127.0.0.1/TrackIt-HTML-CSS-/logout.php">
+      <button type="submit" name="logout" id="logout" class="button">Log Out</button>
+    </form>
+    
+
     <div class="whole">
       <div id="title_view">TrackIt Menu</div>
       <div class="cards">
