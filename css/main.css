@@ -97,7 +97,7 @@ body {
 .valid:before {
   position: relative;
   left: -35px;
-  content: "&#10004;";
+  content: "✓";
 }
 
 /* Add a red text color and an "x" icon when the requirements are wrong */
@@ -108,5 +108,5 @@ body {
 .invalid:before {
   position: relative;
   left: -35px;
-  content: "&#10006;";
+  content: "✖";
 }
