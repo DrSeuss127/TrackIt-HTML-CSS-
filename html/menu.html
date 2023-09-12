@@ -29,7 +29,7 @@ echo "Welcome, " . $_SESSION['username'] . "!";
     <div class="whole">
       <div id="title_view">TrackIt Menu</div>
       <div class="cards">
-        <div class="card card1">
+        <div class="card card1" id="card1">
           <img src="track.png" alt="Track Icon" />
           <div class="card-text">TRACK EXPENSES AND DEBTS</div>
         </div>
@@ -47,5 +47,12 @@ echo "Welcome, " . $_SESSION['username'] . "!";
         </div>
       </div>
     </div>
+
+    <script>
+      document.getElementById("card1").addEventListener("click", function() {
+        // Redirect to the second HTML file
+        window.location.href = "https://127.0.0.1/TrackIt-HTML-CSS-/html/track.html";
+      });
+    </script>
   </body>
 </html>
