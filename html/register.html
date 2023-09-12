@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" type="text/css" href="https://127.0.0.1/TrackIt-HTML-CSS-/css/register.css">
 
 </head>
 <body>
@@ -13,7 +13,7 @@
             <h2>SIGN UP</h2>
     
             <form action="" method="POST">
-                <img class="logo" src="/assets/TrackIt Logo.png" alt="TrackIt Logo"/>
+                <img class="logo" src="https://127.0.0.1/TrackIt-HTML-CSS-/assets/TrackIt Logo.png" alt="TrackIt Logo"/>
     
                 <input type="text" placeholder="Username" id="username"/>
                 <input type="password" placeholder="Password" id="password"/>
@@ -29,7 +29,13 @@
         </div>
     </div>
 
-    
+    <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
 
 </body>
 </html>
