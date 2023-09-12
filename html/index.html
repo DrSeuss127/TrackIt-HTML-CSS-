@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/shared.css" />
+  </head>
+  <body>
     <div class="whole">
-        <div class="container">
-            <form class="form" id="loginForm" action="#" onsubmit="return validation()" method="POST">
-    
-                <!-- TrackIt Logo -->
-                <img class="logo" src="/assets/TrackIt Logo.png" alt="TrackIt Logo">
-    
-                <!-- Username Input -->
-                <input id="username" class="input-field" type="text" placeholder="Username">
-    
-                <!-- Password Input -->
-                <input id="password" class="input-field" type="password" placeholder="Password">
-    
-                <!-- Sign In Button -->
-                <button onclick="myFunc()" type="submit" id="login" class="button">Sign In</button>
-    
-                <!-- Sign Up Link -->
-                <div>
-                    <span>Not Registered? <a href="register.html">Sign Up</a></span>
-                </div>
-    
-                <!-- Loading Spinner -->
-                <div id="loading" class="loading"></div>
-            </form>
-        </div>
+      <div class="container glass">
+        <form
+          class="form"
+          id="loginForm"
+          action="#"
+          onsubmit="return validation()"
+          method="POST"
+        >
+          <!-- TrackIt Logo -->
+          <img class="logo" src="/assets/TrackIt Logo.png" alt="TrackIt Logo" />
+
+          <!-- Username Input -->
+          <input
+            id="username"
+            class="input-field"
+            type="text"
+            placeholder="Username"
+          />
+
+          <!-- Password Input -->
+          <input
+            id="password"
+            class="input-field"
+            type="password"
+            placeholder="Password"
+          />
+
+          <!-- Sign In Button -->
+          <button onclick="myFunc()" type="submit" id="login" class="button">
+            Sign In
+          </button>
+          <script src="/js/main.js" charset="UTF-8"></script>
+
+          <!-- Sign Up Link -->
+          <div>
+            <span>Not Registered? <a href="register.html">Sign Up</a></span>
+          </div>
+
+          <!-- Loading Spinner -->
+          <div id="loading" class="loading"></div>
+        </form>
+      </div>
     </div>
 
     <div id="message">
-        <h3>Password must contain the following:</h3>
-        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-        <p id="number" class="invalid">A <b>number</b></p>
-        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-      </div>
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>
 
-      <script src="/js/main.js" charset="UTF-8"></script>
-</body>
+    <script src="/js/main.js" charset="UTF-8"></script>
+  </body>
 </html>
