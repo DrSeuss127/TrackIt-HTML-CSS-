@@ -56,3 +56,24 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
+
+function validation(){
+  var username = document.loginForm.username.value;
+  var password = document.loginForm.password.value;
+
+  if(username.length=="" && password.length=="") {  
+      alert("Username and Password fields are empty.");  
+      return false;  
+  }  
+  else{
+      if(username.length==""){
+          alert("Username is empty.");
+          return false;
+      }
+
+      if(password.length=""){
+          alert("Password cannot be blank.");
+          return false;
+      }
+  }
+}

@@ -80,8 +80,8 @@ body {
 }
 
 .card img {
-  max-width: 10px;
-  max-height: 10px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .card-text {
