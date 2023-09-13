@@ -25,10 +25,26 @@ function displayExpenses() {
         // Create a list item for each expense
         const listItem = document.createElement("li");
         listItem.innerHTML = `
-            <span>${expense.name}</span>
-            <span>${expense.amount}</span>
-            <span>${expense.dateDueOrPayed}</span>
-            <button onclick="deleteExpense(${i})">Delete</button>
+            <!-- First row with grid -->
+            <div class="grid-row">
+                <!-- First column for labels -->
+                <div class="grid-cell labels">
+                    <div>Name:</div>
+                    <div>Amount:</div>
+                    <div>Date:</div>
+                </div>
+                <!-- Second column for data -->
+                <div class="grid-cell data">
+                    <div>${expense.name}</div>
+                    <div>${expense.amount}</div>
+                    <div>${expense.dateDueOrPayed}</div>
+                </div>
+            </div>
+            <!-- Second row with flexbox -->
+            <div class="flex-row">
+                <!-- Delete button with 30% width -->
+                <button onclick="deleteExpense(${i})" class="delete-button">Delete</button>
+            </div>
         `;
 
         // Append the list item to the expenses list

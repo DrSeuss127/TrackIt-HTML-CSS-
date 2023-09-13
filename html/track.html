@@ -14,6 +14,7 @@ if (!isset($_SESSION['user_authenticated']) || $_SESSION['user_authenticated'] !
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link rel="stylesheet" type="text/css" href="https://127.0.0.1/TrackIt-HTML-CSS-/css/track.css">
+    <link rel="stylesheet" type="text/css" href="/css/track.css">
 </head>
 <body>
     <div class="whole">
@@ -25,12 +26,6 @@ if (!isset($_SESSION['user_authenticated']) || $_SESSION['user_authenticated'] !
                 <input type="date" id="expenseDate" required />
                 <button type="button" onclick="addExpense()">Add Expense</button>
             </form>
-            <div id="indicators" class="grid">
-                <div class="indicator">Expense Name</div>
-                <div class="indicator">Amount</div>
-                <div class="indicator">Date</div>
-                <div class="indicator">Actions</div>
-            </div>
             <ul id="expensesList"></ul>
         </div>
     </div>
