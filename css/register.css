@@ -19,6 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 90vh; /* 90% of the viewport height */
+    margin: 0 auto;
   }
 
 .glass{
@@ -132,4 +133,15 @@ body {
     position: relative;
     left: -35px;
     content: "✖";
+}
+
+@media (max-width: 1280px) {
+    .whole{
+        width: 95%;
+    }
+    .registerBox{
+        width: 95%;
+        max-height: 95vh;
+        padding:10px;
+    }
 }

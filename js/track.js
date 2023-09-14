@@ -57,6 +57,7 @@ function deleteExpense(index) {
     if (index >= 0 && index < initialExpenses.length) {
         initialExpenses.splice(index, 1);
         displayExpenses();
+        // saveExpenses();
     }
 }
 
