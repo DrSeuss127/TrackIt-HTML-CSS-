@@ -1,20 +1,11 @@
-<?php
-session_start(); // Start or resume the session
-
-// Check if the user is authenticated
-if (!isset($_SESSION['user_authenticated']) || $_SESSION['user_authenticated'] !== true) {
-    header("Location: https://127.0.0.1/Trackit-HTML-CSS-/html/index.html"); // Redirect to the login page if not authenticated
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" type="text/css" href="https://127.0.0.1/TrackIt-HTML-CSS-/css/track.css">
     <link rel="stylesheet" type="text/css" href="/css/track.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/track.css"> -->
 </head>
 <body>
     <div class="whole">
@@ -29,6 +20,6 @@ if (!isset($_SESSION['user_authenticated']) || $_SESSION['user_authenticated'] !
             <ul id="expensesList"></ul>
         </div>
     </div>
-    <script src="https://127.0.0.1/TrackIt-HTML-CSS-/js/track.js"></script>
+    <script src="/js/track.js"></script>
 </body>
 </html>

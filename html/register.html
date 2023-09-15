@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="https://127.0.0.1/TrackIt-HTML-CSS-/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
     <!-- <link rel="stylesheet" type="text/css" href="/css/register.css"> -->
 
 </head>
@@ -13,8 +13,8 @@
         <div class="registerBox">
             <h2>SIGN UP</h2>
     
-            <form class="form" name="registerForm" action="https://127.0.0.1/TrackIt-HTML-CSS-/register_process.php" onsubmit="return validation()" method="POST">
-                <img class="logo" src="https://127.0.0.1/TrackIt-HTML-CSS-/assets/TrackIt Logo.png" alt="TrackIt Logo"/>
+            <form class="form" name="registerForm" action="" onsubmit="return (validation() & registerUser());" method="POST">
+                <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo"/>
     
                 <input name="username" id="username" type="text" placeholder="Username"/>
                 <input name="password" id="password" type="password" placeholder="Password"/>
@@ -27,18 +27,16 @@
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
     
-                <button type="submit" name="register" id="register" class="button" formmethod="POST" formaction="https://127.0.0.1/TrackIt-HTML-CSS-/register_process.php">Sign Up</button>
+                <button type="submit" name="register" id="register" class="button" formmethod="POST" onclick="registerUser()">Sign Up</button>
     
                 <div>
-                    <span>Existing User? <a href="index.html">Sign In</a></span>
+                    <span>Existing User? <a href="/html/index.html">Sign In</a></span>
                 </div>
             </form>
     
         </div>
     </div>
 
-
-    <script src="https://127.0.0.1/TrackIt-HTML-CSS-/js/register.js" charset="UTF-8"></script>
-    <!-- <script src="/js/register.js" charset="UTF-8"></script> -->
+    <script src="/js/register.js" charset="UTF-8"></script>
 </body>
 </html>

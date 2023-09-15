@@ -82,3 +82,27 @@ function validation(){
       }
   }
 }
+
+//Registration backend
+function registerUser(){
+  document.addEventListener('DOMContentLoaded', function () {
+      const registerButton = document.getElementById('register');
+    
+      //OnClick function for grabbing the values of the username and password form fields
+      registerButton.addEventListener('click', function () {
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+    
+          // Simulate password hashing (not secure, for demonstration purposes only)
+          const hashedPassword = btoa(password);
+    
+          // Store user data in localStorage
+          localStorage.setItem('username', username);
+          localStorage.setItem('password', hashedPassword);
+    
+          // Redirect to the desired page
+          alert('Registration Successful!');
+          window.location.href = 'https://127.0.0.1/TrackIt-HTML-CSS-/html/index.html';
+      });
+  });
+}

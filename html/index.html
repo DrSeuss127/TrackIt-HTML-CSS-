@@ -92,10 +92,10 @@ body {
     </style>
     <div class="whole">
         <div class="container">
-            <form class="form" name="loginForm" action="https://127.0.0.1/TrackIt-HTML-CSS-/login_process.php" onsubmit="return validation()" method="POST">
+            <form class="form" name="loginForm" action="" onsubmit="return validation()" method="POST">
     
                 <!-- TrackIt Logo -->
-                <img class="logo" src="https://127.0.0.1/TrackIt-HTML-CSS-/assets/TrackIt Logo.png" alt="TrackIt Logo">
+                <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo">
     
                 <!-- Username Input -->
                 <input name="username" id="username" class="input-field" type="text" placeholder="Username">
@@ -104,11 +104,11 @@ body {
                 <input name="password" id="password" class="input-field" type="password" placeholder="Password">
     
                 <!-- Sign In Button -->
-                <button type="submit" name="login" id="login" class="button" formmethod="POST" formaction="https://127.0.0.1/TrackIt-HTML-CSS-/login_process.php">Sign In</button>
+                <button type="submit" name="login" id="login" class="button" formmethod="POST" onclick="loginUser()">Sign In</button>
     
                 <!-- Sign Up Link -->
                 <div>
-                    <span>Not Registered? <a href="https://127.0.0.1/TrackIt-HTML-CSS-/html/register.html">Sign Up</a></span>
+                    <span>Not Registered? <a href="/html/register.html">Sign Up</a></span>
                 </div>
     
                 <!-- Loading Spinner -->
