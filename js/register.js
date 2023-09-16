@@ -1,84 +1,73 @@
-//Password validation
-var myInput = document.getElementById("password");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const letter = document.getElementById("letter");
+const capital = document.getElementById("capital");
+const number = document.getElementById("number");
+const length = document.getElementById("length");
 
-// When the user clicks on the password field, show the message box
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
+passwordInput.addEventListener("keyup", validatePassword);
+passwordInput.onfocus = () => (document.getElementById("message").style.display = "block");
+passwordInput.onblur = () => (document.getElementById("message").style.display = "none");
+
+function validatePassword() {
+  const password = passwordInput.value;
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const isValidLength = password.length >= 8;
+
+  updateUI(letter, hasLowerCase);
+  updateUI(capital, hasUpperCase);
+  updateUI(number, hasNumber);
+  updateUI(length, isValidLength);
 }
 
-// When the user clicks outside of the password field, hide the message box
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
-}
-
-// When the user starts to type something inside the password field
-myInput.onkeyup = function() {
-  // Validate lowercase letters
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInput.value.match(lowerCaseLetters)) {
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
+function updateUI(element, isValid) {
+  if (isValid) {
+    element.classList.remove("invalid");
+    element.classList.add("valid");
   } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-}
-
-  // Validate capital letters
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-  }
-
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-  }
-
-  // Validate length
-  if(myInput.value.length >= 8) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
-  } else {
-    length.classList.remove("valid");
-    length.classList.add("invalid");
+    element.classList.remove("valid");
+    element.classList.add("invalid");
   }
 }
 
-function validation(){
-  var username = document.registerForm.username.value;
-  var password = document.registerForm.password.value;
+function validation(event) {
+  event.preventDefault();
 
-  if(username.length=="" && password.length=="") {  
-      alert("Username and Password fields are empty.");  
-      return false;  
-  }  
-  else{
-      if(username.length==""){
-          alert("Username is empty.");
-          return false;
-      }
+  const username = usernameInput.value;
+  const password = passwordInput.value;
 
-      if(password.length=""){
-          alert("Password cannot be blank.");
-          return false;
-      }
-
-      if(username.length!="" && password.length!=""){
-        alert('Registration successful!');
-        return true
-      }
+  if (isValidForm(username, password)) {
+    const user = { username, password };
+    saveUser(user);
+    alert("Registration successful!");
+    window.location.href = "/html/index.html";
   }
 }
+
+function isValidForm(username, password) {
+  return (
+    username.trim() !== "" &&
+    password.trim() !== "" &&
+    /[a-z]/.test(password) &&
+    /[A-Z]/.test(password) &&
+    /[0-9]/.test(password) &&
+    password.length >= 8
+  );
+}
+
+function saveUser(user) {
+  let users = localStorage.getItem("users");
+  if (!users) {
+    users = [];
+  } else {
+    users = JSON.parse(users);
+  }
+
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+const registerForm = document.forms["registerForm"];
+registerForm.addEventListener("submit", validation);
