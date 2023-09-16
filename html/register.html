@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="https://127.0.0.1/TrackIt-HTML-CSS-/css/register.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/css/register.css"> -->
-
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="/css/register.css" />
+  </head>
+  <body>
     <div class="whole">
-        <div class="registerBox">
-            <h2>SIGN UP</h2>
-    
-            <form class="form" name="registerForm" action="https://127.0.0.1/TrackIt-HTML-CSS-/register_process.php" onsubmit="return validation()" method="POST">
-                <img class="logo" src="https://127.0.0.1/TrackIt-HTML-CSS-/assets/TrackIt Logo.png" alt="TrackIt Logo"/>
-    
-                <input name="username" id="username" type="text" placeholder="Username"/>
-                <input name="password" id="password" type="password" placeholder="Password"/>
+      <div class="registerBox">
+        <h2>SIGN UP</h2>
 
-                <div class="messagebox" id="message">
-                    <h3>Password must contain the following:</h3>
-                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                    <p id="number" class="invalid">A <b>number</b></p>
-                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                </div>
-    
-                <button type="submit" name="register" id="register" class="button" formmethod="POST" formaction="https://127.0.0.1/TrackIt-HTML-CSS-/register_process.php">Sign Up</button>
-    
-                <div>
-                    <span>Existing User? <a href="index.html">Sign In</a></span>
-                </div>
-            </form>
-    
-        </div>
+        <form class="form" name="registerForm" action="#" onsubmit="return validation()">
+          <input name="username" id="username" type="text" placeholder="Username" required />
+          <input name="password" id="password" type="password" placeholder="Password" required />
+
+          <div class="messagebox" id="message">
+            <p>Password must contain the following:</p>
+            <div class="grid-container">
+              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+              <p id="number" class="invalid">A <b>number</b></p>
+              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+          </div>
+
+          <button type="submit" name="register" id="register" class="button">Sign Up</button>
+
+          <div>
+            <span>Existing User? <a href="index.html">Sign In</a></span>
+          </div>
+        </form>
+      </div>
     </div>
-
-
-    <script src="https://127.0.0.1/TrackIt-HTML-CSS-/js/register.js" charset="UTF-8"></script>
-    <!-- <script src="/js/register.js" charset="UTF-8"></script> -->
-</body>
+    <script src="/js/register.js" charset="UTF-8"></script>
+  </body>
 </html>
