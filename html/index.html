@@ -95,13 +95,7 @@
     </style>
     <div class="whole">
       <div class="container">
-        <form
-          class="form"
-          name="loginForm"
-          action=""
-          onsubmit="return validation() & loginUser()"
-          method="POST"
-        >
+        <form class="form" name="loginForm" onsubmit="return validation()">
           <!-- TrackIt Logo -->
           <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo" />
 
@@ -129,7 +123,6 @@
             name="login"
             id="login"
             class="button"
-            formmethod="GET"
             onclick="loginUser()"
           >
             Sign In
@@ -168,28 +161,8 @@
           }
         }
       }
-
-      function loginUser() {
-        const loginButton = document.getElementById("login");
-
-        loginButton.addEventListener("click", function () {
-          const username = document.username.value;
-          const password = document.password.value;
-
-          // Simulate password verification (not secure, for demonstration purposes only)
-          // In a real application, this should be done on the server side.
-          if (localStorage.getItem(username) === password) {
-            // Store user authentication status in localStorage (not recommended for production)
-            localStorage.setItem("user_authenticated", username);
-
-            // Redirect to the desired page
-            alert("Login successful!");
-            window.location.href = "/html/menu.html";
-          } else {
-            alert("Incorrect username or password.");
-          }
-        });
-      }
     </script>
+
+    <script src="/js/auth.js" type="text/javascript"></script>
   </body>
 </html>

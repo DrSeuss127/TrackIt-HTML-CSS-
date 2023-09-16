@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="/css/register.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="/css/register.css"> -->
   </head>
   <body>
     <div class="whole">
       <div class="registerBox">
         <h2>SIGN UP</h2>
 
-        <form
-          class="form"
-          name="registerForm"
-          action=""
-          onsubmit="return validation() & registerUser()"
-          method="POST"
-        >
+        <form class="form" name="registerForm" onsubmit="return validation()">
           <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo" />
 
           <input
@@ -49,7 +42,6 @@
             name="register"
             id="register"
             class="button"
-            formmethod="POST"
             onclick="registerUser()"
           >
             Sign Up
@@ -141,28 +133,8 @@
           }
         }
       }
-
-      //Registration backend
-      function registerUser() {
-        const registerButton = document.getElementById("register");
-
-        //OnClick function for grabbing the values of the username and password form fields
-        registerButton.addEventListener("click", function () {
-          const username = document.username.value;
-          const password = document.password.value;
-
-          // Simulate password hashing (not secure, for demonstration purposes only)
-          const hashedPassword = btoa(password);
-
-          // Store user data in localStorage
-          localStorage.setItem("username", username);
-          localStorage.setItem("password", hashedPassword);
-
-          // Redirect to the desired page
-          alert("Registration Successful!");
-          window.location.href = "/html/index.html";
-        });
-      }
     </script>
+
+    <script type="text/javascript" src="/js/auth.js"></script>
   </body>
 </html>
