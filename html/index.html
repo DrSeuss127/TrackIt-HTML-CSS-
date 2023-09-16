@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <style>
-        /* main.css */
+      /* main.css */
 
-/* Reset some default browser styles */
-body {
-    font-family: Arial, sans-serif;
-    /* background-color: #f0f0f0; */
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #dcd0ff, #9b59b6);
-    }
-  
-    .glass{
-        background: linear-gradient(225deg, rgba(155, 89, 182, 0.4), rgba(220, 208, 255, 0.4));
+      /* Reset some default browser styles */
+      body {
+        font-family: Arial, sans-serif;
+        /* background-color: #f0f0f0; */
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #dcd0ff, #9b59b6);
+      }
+
+      .glass {
+        background: linear-gradient(
+          225deg,
+          rgba(155, 89, 182, 0.4),
+          rgba(220, 208, 255, 0.4)
+        );
         backdrop-filter: blur(8px);
-    }
-    
-    /* Center the container both horizontally and vertically */
-    .whole {
+      }
+
+      /* Center the container both horizontally and vertically */
+      .whole {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh; /* 90% of the viewport height */
-    }
-    
-    /* Basic styles for the container */
-    .container {
+      }
+
+      /* Basic styles for the container */
+      .container {
         text-align: center;
         background-color: #dcd0ff;
         padding: 16px;
         width: 40%;
         border-radius: 8px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Logo styles */
-    .logo {
+      }
+
+      /* Logo styles */
+      .logo {
         width: 156px;
         height: 156px;
-    }
-    
-    /* Logo Text styles */
-    .logo-text {
+      }
+
+      /* Logo Text styles */
+      .logo-text {
         width: 90px;
         height: 50px;
-    }
-    
-    /* Input field styles */
-    .input-field {
+      }
+
+      /* Input field styles */
+      .input-field {
         width: 100%;
         height: 48px;
         margin-top: 16px;
@@ -61,11 +65,11 @@ body {
         border: 1px solid #ccc;
         border-radius: 4px;
         text-align: center;
-    }
-    
-    /* Button styles */
-    .button,
-    .signup-button {
+      }
+
+      /* Button styles */
+      .button,
+      .signup-button {
         width: 100%;
         height: 48px;
         margin-top: 16px;
@@ -75,74 +79,117 @@ body {
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.5s;
-    }
-    
-    .button:hover,
-    .signup-button:hover {
+      }
+
+      .button:hover,
+      .signup-button:hover {
         background-color: #8e44ad;
-    }
-    
-    /* Loading Spinner styles */
-    .loading {
+      }
+
+      /* Loading Spinner styles */
+      .loading {
         margin-top: 32px;
         margin-bottom: 32px;
         display: none;
-    }
-  
+      }
     </style>
     <div class="whole">
-        <div class="container">
-            <form class="form" name="loginForm" action="" onsubmit="return validation()" method="POST">
-    
-                <!-- TrackIt Logo -->
-                <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo">
-    
-                <!-- Username Input -->
-                <input name="username" id="username" class="input-field" type="text" placeholder="Username">
-    
-                <!-- Password Input -->
-                <input name="password" id="password" class="input-field" type="password" placeholder="Password">
-    
-                <!-- Sign In Button -->
-                <button type="submit" name="login" id="login" class="button" formmethod="POST" onclick="loginUser()">Sign In</button>
-    
-                <!-- Sign Up Link -->
-                <div>
-                    <span>Not Registered? <a href="/html/register.html">Sign Up</a></span>
-                </div>
-    
-                <!-- Loading Spinner -->
-                <div id="loading" class="loading"></div>
-            </form>
-        </div>
+      <div class="container">
+        <form
+          class="form"
+          name="loginForm"
+          action=""
+          onsubmit="return validation() & loginUser()"
+          method="POST"
+        >
+          <!-- TrackIt Logo -->
+          <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo" />
+
+          <!-- Username Input -->
+          <input
+            name="username"
+            id="username"
+            class="input-field"
+            type="text"
+            placeholder="Username"
+          />
+
+          <!-- Password Input -->
+          <input
+            name="password"
+            id="password"
+            class="input-field"
+            type="password"
+            placeholder="Password"
+          />
+
+          <!-- Sign In Button -->
+          <button
+            type="submit"
+            name="login"
+            id="login"
+            class="button"
+            formmethod="GET"
+            onclick="loginUser()"
+          >
+            Sign In
+          </button>
+
+          <!-- Sign Up Link -->
+          <div>
+            <span
+              >Not Registered? <a href="/html/register.html">Sign Up</a></span
+            >
+          </div>
+
+          <!-- Loading Spinner -->
+          <div id="loading" class="loading"></div>
+        </form>
+      </div>
     </div>
 
     <script>
-        function validation(){
-            var username = document.loginForm.username.value;
-            var password = document.loginForm.password.value;
+      function validation() {
+        var username = document.loginForm.username.value;
+        var password = document.loginForm.password.value;
 
-            if(username.length=="" && password.length=="") {  
-                alert("Username and Password fields are empty.");  
-                return false;  
-            }  
-            else{
-                if(username.length==""){
-                    alert("Username is empty.");
-                    return false;
-                }
+        if (username.length == "" && password.length == "") {
+          alert("Username and Password fields are empty.");
+          return false;
+        } else {
+          if (username.length == "") {
+            alert("Username is empty.");
+            return false;
+          }
 
-                if(password.length=""){
-                    alert("Password cannot be blank.");
-                    return false;
-                }
-
-                if(username.length!="" && password.length!=""){
-                    alert('Login successful!');
-                    return true;
-                }
-            }
+          if ((password.length = "")) {
+            alert("Password cannot be blank.");
+            return false;
+          }
         }
+      }
+
+      function loginUser() {
+        const loginButton = document.getElementById("login");
+
+        loginButton.addEventListener("click", function () {
+          const username = document.username.value;
+          const password = document.password.value;
+
+          // Simulate password verification (not secure, for demonstration purposes only)
+          // In a real application, this should be done on the server side.
+          if (localStorage.getItem(username) === password) {
+            // Store user authentication status in localStorage (not recommended for production)
+            localStorage.setItem("user_authenticated", username);
+
+            // Redirect to the desired page
+            alert("Login successful!");
+            window.location.href = "/html/menu.html";
+          } else {
+            alert("Incorrect username or password.");
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>

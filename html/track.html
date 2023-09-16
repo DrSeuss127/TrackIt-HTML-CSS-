@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
-    <link rel="stylesheet" type="text/css" href="/css/track.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/css/track.css"> -->
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="/css/track.css" />
+  </head>
+  <body>
     <div class="whole">
-        <div class="container glass">
-            <h1>Expense Tracker</h1>
-            <form id="expenseForm">
-                <input type="text" id="expenseName" placeholder="Expense Name" required />
-                <input type="number" id="expenseAmount" placeholder="Amount" required />
-                <input type="date" id="expenseDate" required />
-                <button type="button" onclick="addExpense()">Add Expense</button>
-            </form>
-            <ul id="expensesList"></ul>
-        </div>
+      <div class="container glass">
+        <h1>Expense Tracker</h1>
+        <form id="expenseForm">
+          <input
+            type="text"
+            id="expenseName"
+            placeholder="Expense Name"
+            required
+          />
+          <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Amount"
+            required
+          />
+          <input type="date" id="expenseDate" required />
+          <button type="button" onclick="addExpense()">Add Expense</button>
+        </form>
+        <ul id="expensesList"></ul>
+      </div>
     </div>
     <script src="/js/track.js"></script>
-</body>
+  </body>
 </html>

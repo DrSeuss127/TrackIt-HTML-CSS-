@@ -1,42 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css" />
     <!-- <link rel="stylesheet" type="text/css" href="/css/register.css"> -->
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="whole">
-        <div class="registerBox">
-            <h2>SIGN UP</h2>
-    
-            <form class="form" name="registerForm" action="" onsubmit="return (validation() & registerUser());" method="POST">
-                <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo"/>
-    
-                <input name="username" id="username" type="text" placeholder="Username"/>
-                <input name="password" id="password" type="password" placeholder="Password"/>
+      <div class="registerBox">
+        <h2>SIGN UP</h2>
 
-                <div class="messagebox" id="message">
-                    <h3>Password must contain the following:</h3>
-                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                    <p id="number" class="invalid">A <b>number</b></p>
-                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                </div>
-    
-                <button type="submit" name="register" id="register" class="button" formmethod="POST" onclick="registerUser()">Sign Up</button>
-    
-                <div>
-                    <span>Existing User? <a href="/html/index.html">Sign In</a></span>
-                </div>
-            </form>
-    
-        </div>
+        <form
+          class="form"
+          name="registerForm"
+          action=""
+          onsubmit="return validation() & registerUser()"
+          method="POST"
+        >
+          <img class="logo" src="/assets/trackit_logo.png" alt="TrackIt Logo" />
+
+          <input
+            name="username"
+            id="username"
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            name="password"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+
+          <div class="messagebox" id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">
+              A <b>capital (uppercase)</b> letter
+            </p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+
+          <button
+            type="submit"
+            name="register"
+            id="register"
+            class="button"
+            formmethod="POST"
+            onclick="registerUser()"
+          >
+            Sign Up
+          </button>
+
+          <div>
+            <span>Existing User? <a href="/html/index.html">Sign In</a></span>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <script src="/js/register.js" charset="UTF-8"></script>
-</body>
+    <script>
+      //Password validation
+      var myInput = document.getElementById("password");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var number = document.getElementById("number");
+      var length = document.getElementById("length");
+
+      // When the user clicks on the password field, show the message box
+      myInput.onfocus = function () {
+        document.getElementById("message").style.display = "block";
+      };
+
+      // When the user clicks outside of the password field, hide the message box
+      myInput.onblur = function () {
+        document.getElementById("message").style.display = "none";
+      };
+
+      // When the user starts to type something inside the password field
+      myInput.onkeyup = function () {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        } else {
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+          number.classList.remove("invalid");
+          number.classList.add("valid");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("invalid");
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        } else {
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      };
+
+      function validation() {
+        var username = document.registerForm.username.value;
+        var password = document.registerForm.password.value;
+
+        if (username.length == "" && password.length == "") {
+          alert("Username and Password fields are empty.");
+          return false;
+        } else {
+          if (username.length == "") {
+            alert("Username is empty.");
+            return false;
+          }
+
+          if ((password.length = "")) {
+            alert("Password cannot be blank.");
+            return false;
+          }
+        }
+      }
+
+      //Registration backend
+      function registerUser() {
+        const registerButton = document.getElementById("register");
+
+        //OnClick function for grabbing the values of the username and password form fields
+        registerButton.addEventListener("click", function () {
+          const username = document.username.value;
+          const password = document.password.value;
+
+          // Simulate password hashing (not secure, for demonstration purposes only)
+          const hashedPassword = btoa(password);
+
+          // Store user data in localStorage
+          localStorage.setItem("username", username);
+          localStorage.setItem("password", hashedPassword);
+
+          // Redirect to the desired page
+          alert("Registration Successful!");
+          window.location.href = "/html/index.html";
+        });
+      }
+    </script>
+  </body>
 </html>
