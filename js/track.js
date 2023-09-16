@@ -1,10 +1,19 @@
 let initialExpenses = [];
+let toLoad = [];
+// const loggedInUser = getItem("loggedInUser", JSON.parse(loggedInUser));
 
 const saveExpenses = () => localStorage.setItem("expenses", JSON.stringify(initialExpenses));
 
 const loadExpenses = () => {
-    const savedExpenses = localStorage.getItem("expenses");
-    if (savedExpenses) initialExpenses = JSON.parse(savedExpenses);
+    const savedExpenses = localStorage.getItem("expenses"); //lahat ng expenses
+    if (savedExpenses) initialExpenses = JSON.parse(savedExpenses); //lagay lahat ng expenses sa initial
+    //loop initialExpenses then check if loggedInUser === initialExpense.owner
+    // initialExpenses.forEach((initialExpense) => {
+    //     const [ name, amount, dateDueOrPayed, owner ] = initialExpense;
+    //     if (owner === loggedInUser){
+    //         toLoad.push(initialExpense);
+    //     }
+    // });
 }
 
 const displayExpenses = () => {
