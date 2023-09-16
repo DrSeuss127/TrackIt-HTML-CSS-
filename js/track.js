@@ -47,7 +47,6 @@ const addExpense = () => {
     const nameInput = document.getElementById("expenseName");
     const amountInput = document.getElementById("expenseAmount");
     const dateInput = document.getElementById("expenseDate");
-//wait xd
     const name = nameInput.value;
     const amount = parseFloat(amountInput.value);
     const dateDueOrPayed = dateInput.value;
