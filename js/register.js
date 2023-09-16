@@ -6,8 +6,10 @@ const number = document.getElementById("number");
 const length = document.getElementById("length");
 
 passwordInput.addEventListener("keyup", validatePassword);
-passwordInput.onfocus = () => (document.getElementById("message").style.display = "block");
-passwordInput.onblur = () => (document.getElementById("message").style.display = "none");
+passwordInput.onfocus = () =>
+  (document.getElementById("message").style.display = "block");
+passwordInput.onblur = () =>
+  (document.getElementById("message").style.display = "none");
 
 function validatePassword() {
   const password = passwordInput.value;
@@ -59,13 +61,20 @@ function isValidForm(username, password) {
 
 function saveUser(user) {
   let users = localStorage.getItem("users");
+
   if (!users) {
     users = [];
   } else {
     users = JSON.parse(users);
   }
 
-  users.push(user);
+  if (users.includes(usernameInput)) {
+    alert("Username already taken!");
+    return;
+  } else {
+    users.push(user);
+  }
+
   localStorage.setItem("users", JSON.stringify(users));
 }
 

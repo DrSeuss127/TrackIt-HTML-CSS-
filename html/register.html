@@ -10,22 +10,43 @@
     <div class="whole">
       <div class="registerBox">
         <h2>SIGN UP</h2>
-
-        <form class="form" name="registerForm" action="#" onsubmit="return validation()">
-          <input name="username" id="username" type="text" placeholder="Username" required />
-          <input name="password" id="password" type="password" placeholder="Password" required />
+        <img class="logo" src="/assets/TrackIt Logo.png" alt="TrackIt Logo" />
+        <form
+          class="form"
+          name="registerForm"
+          action="#"
+          onsubmit="return validation()"
+        >
+          <input
+            name="username"
+            id="username"
+            type="text"
+            placeholder="Username"
+            required
+          />
+          <input
+            name="password"
+            id="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
 
           <div class="messagebox" id="message">
             <p>Password must contain the following:</p>
             <div class="grid-container">
               <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+              <p id="capital" class="invalid">
+                A <b>capital (uppercase)</b> letter
+              </p>
               <p id="number" class="invalid">A <b>number</b></p>
               <p id="length" class="invalid">Minimum <b>8 characters</b></p>
             </div>
           </div>
 
-          <button type="submit" name="register" id="register" class="button">Sign Up</button>
+          <button type="submit" name="register" id="register" class="button">
+            Sign Up
+          </button>
 
           <div>
             <span>Existing User? <a href="index.html">Sign In</a></span>
