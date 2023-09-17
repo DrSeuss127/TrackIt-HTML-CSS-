@@ -1,7 +1,7 @@
 let allExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
 let loggedInUsername = sessionStorage.getItem("loggedInUsername");
 let expensesToLoad = [];
-
+//
 const saveExpenses = () => localStorage.setItem("expenses", JSON.stringify(allExpenses));
 
 const filterExpensesByOwner = () => {
