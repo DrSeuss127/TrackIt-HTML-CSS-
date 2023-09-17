@@ -2,8 +2,7 @@ let initialExpenses = [];
 let loggedInUsername = sessionStorage.getItem("loggedInUsername");
 let expensesToLoad = [];
 
-const saveExpenses = () =>
-  localStorage.setItem("expenses", JSON.stringify(initialExpenses));
+const saveExpenses = () => localStorage.setItem("expenses", JSON.stringify(initialExpenses));
 
 const loadExpenses = () => {
   const savedExpenses = localStorage.getItem("expenses");
