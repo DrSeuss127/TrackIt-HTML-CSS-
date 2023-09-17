@@ -15,7 +15,7 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* Center the container both horizontally and vertically */
+
 .whole {
   display: flex;
   justify-content: center;
@@ -121,28 +121,28 @@ li {
 
 .grid-row {
   display: grid;
-  grid-template-columns: 40% 60%; /* Two columns, 30% and 70% width */
+  grid-template-columns: 40% 60%; 
 }
 
-/* Style for the labels in the first column */
+
 .labels {
-  text-align: left; /* Align labels to the right */
+  text-align: left; 
 }
 
-/* Style for the second column with data */
+
 .data {
   text-align: left;
-  padding-left: 10px; /* Add padding for separation */
+  padding-left: 10px; 
 }
 
-/* Style for the second row with flexbox */
+
 .flex-row {
   display: flex;
-  justify-content: flex-end; /* Align delete button to the right */
-  align-items: center; /* Vertically center the button */
+  justify-content: flex-end; 
+  align-items: center; 
 }
 
-/* Style for the delete button with 30% width */
+
 .delete-button {
   background-color: #e74c3c;
   border: none;
@@ -151,10 +151,10 @@ li {
   cursor: pointer;
   padding: 4px 8px;
   margin-left: 8px;
-  width: 30%; /* 30% width */
+  width: 30%; 
 }
 
-/* Style for the indicators grid */
+
 #indicators {
   display: grid;
   grid-template-columns: 40% 20% 20% 20%;
@@ -162,16 +162,16 @@ li {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-top: 10px; /* Add some spacing between the form and indicators */
+  margin-top: 10px; 
 }
 
-/* Style for each indicator */
+
 .indicator {
-  text-align: center; /* Align text to the left */
-  padding: 4px; /* Add padding to the indicators */
+  text-align: center; 
+  padding: 4px; 
 }
 
-/* responsiveness */
+
 @media (max-width: 1280px) {
   .whole {
     width: 95%;

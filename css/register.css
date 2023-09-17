@@ -1,3 +1,6 @@
+
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -15,13 +18,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 90vh; 
+    margin: 0 auto;
   }
 
 .glass{
     background: linear-gradient(225deg, rgba(155, 89, 182, 0.4), rgba(220, 208, 255, 0.4));
     backdrop-filter: blur(8px);
 }
+
 
 .registerBox {
     text-align: center;
@@ -32,16 +37,19 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
 .registerBox .logo {
     width: 156px;
     height: 156px;
 }
+
 
 .registerBox h2 {
     color: #333;
     font-size: 24px;
     margin-top: 16px;
 }
+
 
 .registerBox input[type="text"],
 .registerBox input[type="password"] {
@@ -53,6 +61,7 @@ body {
     border-radius: 4px;
     text-align: center;
 }
+
 
 .registerBox button {
     width: 100%;
@@ -70,6 +79,7 @@ body {
     background-color: #8e44ad;
 }
 
+
 .registerBox span {
     color: #333;
     font-size: 14px;
@@ -86,28 +96,23 @@ body {
     color: #0056b3;
 }
 
+
+
 #message {
     display:none;
+    
     color: #000;
     position: relative;
+    padding: 20px;
+    margin-top: 10px;
     background-color: rgba(255, 255, 255, 0);
 }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-.invalid {
-    color: red;
-    margin: 0;
-}
-
   
 #message p {
-    font-size: 12px;
+    padding: 10px 35px;
+    font-size: 18px;
 }
+  
   
 .valid {
     color: green;
@@ -119,6 +124,7 @@ body {
     content: "✓";
 }
   
+  
 .invalid {
     color: red;
 }
@@ -127,4 +133,15 @@ body {
     position: relative;
     left: -35px;
     content: "✖";
+}
+
+@media (max-width: 1280px) {
+    .whole{
+        width: 95%;
+    }
+    .registerBox{
+        width: 95%;
+        max-height: 95vh;
+        padding:10px;
+    }
 }
