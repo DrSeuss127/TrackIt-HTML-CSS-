@@ -1,28 +1,18 @@
-let initialExpenses = [];
+let allExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
 let loggedInUsername = sessionStorage.getItem("loggedInUsername");
 let expensesToLoad = [];
 
-const saveExpenses = () => localStorage.setItem("expenses", JSON.stringify(initialExpenses));
+const saveExpenses = () => localStorage.setItem("expenses", JSON.stringify(allExpenses));
 
-const loadExpenses = () => {
-  const savedExpenses = localStorage.getItem("expenses");
-  if (savedExpenses) {
-    initialExpenses = JSON.parse(savedExpenses);
-  }
-
-  initialExpenses.forEach((expense) => {
-    if (loggedInUsername === expense.owner) {
-      expensesToLoad.push(expense);
-    }
-  });
-  initialExpenses = expensesToLoad;
+const filterExpensesByOwner = () => {
+  expensesToLoad = allExpenses.filter((expense) => expense.owner === loggedInUsername);
 };
 
 const displayExpenses = () => {
   const expensesList = document.getElementById("expensesList");
   expensesList.innerHTML = "";
 
-  initialExpenses.map((expense, i) => {
+  expensesToLoad.forEach((expense, i) => {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
                 <div class="grid-row">
@@ -47,8 +37,9 @@ const displayExpenses = () => {
 };
 
 const deleteExpense = (index) => {
-  if (index >= 0 && index < initialExpenses.length) {
-    initialExpenses.splice(index, 1);
+  if (index >= 0 && index < allExpenses.length) {
+    allExpenses.splice(index, 1);
+    filterExpensesByOwner();
     displayExpenses();
     saveExpenses();
   }
@@ -61,14 +52,14 @@ const addExpense = () => {
   const name = nameInput.value;
   const amount = parseFloat(amountInput.value);
   const dateDueOrPayed = dateInput.value;
-  const owner = loggedInUsername;
 
   if (name && !isNaN(amount) && dateDueOrPayed) {
-    const newExpense = { name, amount, dateDueOrPayed, owner };
-    initialExpenses.push(newExpense);
+    const newExpense = { name, amount, dateDueOrPayed, owner: loggedInUsername };
+    allExpenses.push(newExpense);
     nameInput.value = "";
     amountInput.value = "";
     dateInput.value = "";
+    filterExpensesByOwner();
     displayExpenses();
     saveExpenses();
   }
@@ -76,8 +67,9 @@ const addExpense = () => {
 
 const logout = () => {
   sessionStorage.setItem("loggedInUsername", "");
+  expensesToLoad = [];
   window.location.href = "/html/index.html";
 };
 
-loadExpenses();
+filterExpensesByOwner();
 displayExpenses();
