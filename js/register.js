@@ -9,7 +9,7 @@ passwordInput.addEventListener("keyup", validatePassword);
 passwordInput.onfocus = () => (document.getElementById("message").style.display = "block");
 passwordInput.onblur = () => (document.getElementById("message").style.display = "none");
 
-function validatePassword() {
+const validatePassword = () => {
   const password = passwordInput.value;
   const hasLowerCase = /[a-z]/.test(password);
   const hasUpperCase = /[A-Z]/.test(password);
@@ -22,7 +22,7 @@ function validatePassword() {
   updateUI(length, isValidLength);
 }
 
-function updateUI(element, isValid) {
+const updateUI = (element, isValid) => {
   if (isValid) {
     element.classList.remove("invalid");
     element.classList.add("valid");
@@ -32,7 +32,7 @@ function updateUI(element, isValid) {
   }
 }
 
-function validation(event) {
+const validation = (event) => {
   event.preventDefault();
 
   const username = usernameInput.value;
@@ -46,7 +46,7 @@ function validation(event) {
   }
 }
 
-function isValidForm(username, password) {
+const isValidForm = (username, password) => {
   return (
     username.trim() !== "" &&
     password.trim() !== "" &&
@@ -57,7 +57,7 @@ function isValidForm(username, password) {
   );
 }
 
-function saveUser(user) {
+const saveUser = (user) => {
   let users = localStorage.getItem("users");
   if (!users) {
     users = [];
