@@ -68,7 +68,7 @@ const addExpense = () => {
 const logout = () => {
   sessionStorage.setItem("loggedInUsername", "");
   expensesToLoad = [];
-  window.location.href = index.html";
+  window.location.href = "index.html";
 };
 
 filterExpensesByOwner();
