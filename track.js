@@ -46,14 +46,14 @@ const deleteExpense = (index) => {
 };
 
 const addExpense = () => {
-  const nameInput = document.getElementById("expenseName");
-  const amountInput = document.getElementById("expenseAmount");
+  const nameInput = document.getElementById('expenseName');
+  const amountInput = document.getElementById('expenseAmount');
   const dateInput = document.getElementById("expenseDate");
   const name = nameInput.value;
   const amount = parseFloat(amountInput.value);
   const dateDueOrPayed = dateInput.value;
 
-  if (name && !isNaN(amount) && dateDueOrPayed) {
+  if (name && !isNaN(amount) && dateDueOrPayed){
     const newExpense = { name, amount, dateDueOrPayed, owner: loggedInUsername };
     allExpenses.push(newExpense);
     nameInput.value = "";
