@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", (event) => {
 
   if (loggedInUser) {
     sessionStorage.setItem("loggedInUsername", loggedInUser.username);
-    window.location.href = "/html/track.html";
+    window.location.href = "track.html";
   } else {
     alert("Invalid username or password. Please try again.");
   }

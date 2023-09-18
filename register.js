@@ -44,7 +44,7 @@ function validation(event) {
     const user = { username, password };
     saveUser(user);
     alert("Registration successful!");
-    window.location.href = "/html/index.html";
+    window.location.href = "index.html";
   }
 }
 
